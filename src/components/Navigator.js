@@ -1,6 +1,6 @@
 import React from 'react';
 import '../style/App.css';
-import { SealIcon, Login, TrackingLists } from './Export.js'
+import { NavBar, Login, TrackingLists } from './Export.js'
 
 
 class Navigator extends React.Component {
@@ -11,9 +11,9 @@ class Navigator extends React.Component {
             currentLocation: 'Login',
             user: null
         };
-        this.handleClick = this.handleClick.bind(this);
+        this.handleNavButtonClick = this.handleNavButtonClick.bind(this);
     }
-    handleClick(event) {
+    handleNavButtonClick(event) {
         if(event.target.value === 'Logout'){
             this.setState({
                 validLogin: false,
@@ -28,43 +28,12 @@ class Navigator extends React.Component {
     render(){
         const login = this.state.validLogin;
         const location = this.state.currentLocation;
-        if(login){
-            //USER is logged in
-            return(
-                <div>
-                    <div className="navbar">
-                        <SealIcon width={100} />
-                        <nav>
-                            <ul className="nav_ul">
-                                <li><button className="nav_item" value="Tracking Lists" onClick={this.handleClick}>{new Date().getFullYear()} Session</button></li>
-                                <li><button className="nav_item" value="User Manual" onClick={this.handleClick}>User Manual</button></li>
-                                <li><button className="nav_item" value="Change Password" onClick={this.handleClick}>Change Password</button></li>
-                                <li><button className="nav_item" value="Logout" onClick={this.handleClick}>Log out</button></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <Navigate login={login} location={location} />
-                </div>
-            ); 
-        }else{
-            //USER is logged out
-            return(
-                <div>
-                    <div className="navbar">
-                        <SealIcon width={100} />
-                        <nav>
-                            <ul className="nav_ul">
-                                <li><button className="nav_item" value="Login" onClick={this.handleClick}>Login</button></li>
-                                <li><button className="nav_item" value="User Manual" onClick={this.handleClick}>User Manual</button></li>
-                                <li><button className="nav_item" value="Create Account" onClick={this.handleClick}>Create Account</button></li>
-                                <li><button className="nav_item" value="Forgot Password" onClick={this.handleClick}>Forgot Password</button></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <Navigate login={login} location={location} />
-                </div>
-            );
-        }
+        return(
+            <div>
+                <NavBar isLoggedIn={login} handleNavButtonClick={this.handleNavButtonClick} />
+                <Navigate login={login} location={location} />
+            </div>
+        );
     }
 }
 function Navigate(props) {

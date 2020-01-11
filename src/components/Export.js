@@ -5,7 +5,8 @@ import List from './List.js';
 import TrackingLists from './TrackingLists.js';
 import CreateNewListForm from './CreateNewListForm.js';
 import Navigator from './Navigator.js';
-import SealIcon from './SealIcon.js'
+import NavBar from './NavBar.js';
+import SealIcon from './SealIcon.js';
 
 export {
     Footer,
@@ -15,6 +16,7 @@ export {
     TrackingLists,
     CreateNewListForm,
     Navigator,
+    NavBar,
     SealIcon
 }
 
