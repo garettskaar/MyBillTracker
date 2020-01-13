@@ -1,5 +1,12 @@
+html {
+  height: 100%;
+}
+
 body {
+  height: 100%;
   margin: 0;
+  background-image: linear-gradient(260deg, #302b2b 0%, #d1d1d1 100%);
+  background-repeat: no-repeat;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -7,5 +14,93 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.container .container-left {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 10%;
+  border: 1px solid #555;
+}
+
+.container .container-left .nav_ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container .container-left .nav_item {
+  font-size: 15px;
+  background: none !important;
+  border: none;
+  text-align: center;
+  margin: 15px auto;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.container .container-left .svg_seal {
+  padding: 8px;
+  margin: 8px;
+}
+
+.container .container-left .svg_seal path {
+  fill: #303030;
+  -webkit-transition: fill 1.0s ease-out;
+  transition: fill 1.0s ease-out;
+}
+
+.container .container-left .svg_seal:hover {
+  cursor: pointer;
+}
+
+.container .container-left .svg_seal:hover path {
+  fill: #ffffff;
+}
+
+.container .container-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  padding-top: 35px;
+  border: 1px solid #555;
+}
+
+.container .container-right .app-header {
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+  text-align: left;
+  padding-bottom: 35px;
+  border: 1px solid #555;
+}
+
+.app-footer {
+  width: 100%;
+  font-size: 13px;
+}
+
+.app-footer p {
+  text-align: right;
+  padding-right: 30px;
 }
 /*# sourceMappingURL=App.css.map */

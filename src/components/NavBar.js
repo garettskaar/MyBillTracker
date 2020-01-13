@@ -1,6 +1,7 @@
 import React from 'react';
 import '../style/App.css';
 import { SealIcon } from './Export.js'
+import { ReactComponent as Seal } from '../graphics/idaho_seal.svg';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -14,8 +15,11 @@ class NavBar extends React.Component {
         const loggedIn = this.props.loggedIn;
         if(loggedIn){
             return(
-                <div className="navbar">
-                    <SealIcon width={100} />
+                <div className="container-left">
+                    {/*<SealIcon width={100} />*/}
+                    <div>
+                        <Seal />
+                    </div>
                     <nav>
                         <ul className="nav_ul">
                             <li><button className="nav_item" value="Tracking Lists" onClick={this.handleClick}>{new Date().getFullYear()} Session</button></li>
@@ -28,8 +32,11 @@ class NavBar extends React.Component {
             );
         } else{
             return(
-                <div className="navbar">
-                    <SealIcon width={100} />
+                <div className="container-left">
+                    {/*<SealIcon width={100} />*/}
+                    <div>
+                        <Seal />
+                    </div>
                     <nav>
                         <ul className="nav_ul">
                             <li><button className="nav_item" value="Login" onClick={this.handleClick}>Login</button></li>

@@ -38,7 +38,7 @@ class Login extends React.Component {
     render(){
         const msg = this.state.msg;
         return (
-            <div>
+            <div className="app-main">
                 <form>
                     <input name ="name" placeholder="user name" type="text" value={this.state.name} onChange={this.handleChange} />
                     <input name="psw" placeholder="password" type="password" value={this.state.psw} onChange={this.handleChange} />

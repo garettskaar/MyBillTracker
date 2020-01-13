@@ -4,11 +4,10 @@ import { Footer, Header, Navigator } from './components/Export.js'
 
 function App() {
   return (
-    <div>
-        <Header />
-        <Navigator />
-        <Footer />
-    </div>
+      <div>
+          <Navigator />
+          <Footer />
+      </div>
   );
 }
 
