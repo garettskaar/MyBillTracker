@@ -1,25 +1,39 @@
 import React from 'react';
 import '../style/App.css';
-import { SealIcon } from './Export.js'
+import { HamburgerButton } from 'react-hamburger-button';
 import { ReactComponent as Seal } from '../graphics/idaho_seal.svg';
 
 class NavBar extends React.Component {
     constructor(props) {
-        super(props);   
+        super(props);
+        this.state = {
+            visible: true
+        };   
         this.handleClick = this.handleClick.bind(this);
+        this.handleToggle = this.handleToggle.bind(this);
+    }
+    handleToggle(){
+        this.setState({
+            visible: !this.state.visible
+        });
     }
     handleClick(event){
         this.props.handleNavButtonClick(event);
     }
     render(){
         const loggedIn = this.props.loggedIn;
+        const visible = this.state.visible;
+        let leftClassName = "container-left"
+        if(!visible){
+            leftClassName = "container-left-hidden"
+        }
         if(loggedIn){
             return(
-                <div className="container-left">
-                    {/*<SealIcon width={100} />*/}
-                    <div>
-                        <Seal />
+                <div className={leftClassName}>
+                    <div className="nav_toggle">
+                        <HamburgerButton open={visible} onClick={this.handleToggle} />
                     </div>
+                    <Seal />
                     <nav>
                         <ul className="nav_ul">
                             <li><button className="nav_item" value="Tracking Lists" onClick={this.handleClick}>{new Date().getFullYear()} Session</button></li>
@@ -32,11 +46,11 @@ class NavBar extends React.Component {
             );
         } else{
             return(
-                <div className="container-left">
-                    {/*<SealIcon width={100} />*/}
-                    <div>
-                        <Seal />
+                <div className={leftClassName}>
+                    <div className="nav_toggle">
+                        <HamburgerButton open={visible} onClick={this.handleToggle} />
                     </div>
+                    <Seal />
                     <nav>
                         <ul className="nav_ul">
                             <li><button className="nav_item" value="Login" onClick={this.handleClick}>Login</button></li>

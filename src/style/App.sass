@@ -1,70 +1,120 @@
-$sealpadding: 8px
-    
-html
-    height: 100%
+@import "base"
 
-body
-    height: 100% 
-    margin: 0
-    background-image: linear-gradient(260deg, #302b2b 0%, #d1d1d1   100%)
-    background-repeat: no-repeat
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif
-    -webkit-font-smoothing: antialiased
-    -moz-osx-font-smoothing: grayscale
-
-code 
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace
-
-.container
-    display: flex
-    flex-direction: row 
-    .container-left
-        align-items: center
-        justify-content: center
-        width: 10%
-        border: 1px solid #555;
-        .nav_ul 
-            list-style-type: none
-            margin: 0
-            padding: 0
-        .nav_item
-            font-size: 15px
-            background: none!important
-            border: none
-            text-align: center
-            margin: 15px auto
-            text-decoration: none
-            cursor: pointer
-        .svg_seal
-            padding: $sealpadding
-            margin: $sealpadding
-            path
-                fill: #303030
-                transition: fill 1.0s ease-out
-            &:hover
-                cursor: pointer
-                path
-                    fill: #ffffff
-    .container-right
+@include respond-below(md)
+    .container
         display: flex
-        flex-direction: column
+        flex-direction: row
+        .container-left-hidden
+            width: 0
+            .nav_toggle
+                margin: 10px
+                visibility: visible
+            .svg_seal
+                visibility: hidden
+            .nav_ul
+                visibility: hidden
+        .container-left
+            align-items: center
+            justify-content: center
+            width: 15%
+            border: 1px solid #555
+            .nav_toggle
+                visibility: visible
+            .svg_seal
+                padding: $sealpadding
+                margin: $sealpadding
+                path
+                    fill: #303030
+                    transition: fill 1.0s ease-out
+                &:hover
+                    cursor: pointer
+                    path
+                        fill: #ffffff
+            .nav_ul
+                list-style-type: none
+                margin: 0
+                .nav_item
+                    font-size: 15px
+                    background: none!important
+                    border: none
+                    text-align: center
+                    margin: 15px auto
+                    text-decoration: none
+                    cursor: pointer
+                
+        .container-right
+            display: flex
+            flex-direction: column
+            width: 85%
+            padding-top: 35px
+            //border: 1px solid #555
+            .app-header
+                order: -1
+                text-align: left
+                padding-bottom: 35px
+                //border: 1px solid #555
+            .app-main
+                    
+    .app-footer
         width: 100%
-        padding-top: 35px
-        border: 1px solid #555;
-        .app-header
-            order: -1
-            text-align: left
-            padding-bottom: 35px 
-            border: 1px solid #555;
-        .app-main
-             
-.app-footer
-    width: 100%
-    font-size: 13px
-    p
-        text-align: right
-        padding-right: 30px
+        font-size: 13px
+        //border: 1px solid #555
+        p
+            text-align: center
+
+@include respond-above(md)
+    .container
+        display: flex
+        flex-direction: row
+        .container-left, .container-left-hidden
+            align-items: center
+            justify-content: center
+            width: 15%
+            //border: 1px solid #555
+            .nav_toggle
+                visibility: hidden
+            .svg_seal
+                padding: $sealpadding
+                margin: $sealpadding
+                path
+                    fill: #303030
+                    transition: fill 1.0s ease-out
+                &:hover
+                    cursor: pointer
+                    path
+                        fill: #ffffff
+            .nav_ul
+                list-style-type: none
+                margin: 0
+                .nav_item
+                    font-size: 15px
+                    background: none!important
+                    border: none
+                    text-align: center
+                    margin: 15px auto
+                    text-decoration: none
+                    cursor: pointer
+                
+        .container-right
+            display: flex
+            flex-direction: column
+            width: 85%
+            padding-top: 35px
+            //border: 1px solid #555
+            .app-header
+                order: -1
+                text-align: left
+                padding-bottom: 35px
+                //border: 1px solid #555
+            .app-main
+                    
+    .app-footer
+        width: 100%
+        font-size: 13px
+        //border: 1px solid #555
+        p
+            text-align: right
+            padding-right: 30px
     
-        
+       
 

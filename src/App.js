@@ -1,6 +1,6 @@
 import React from 'react';
 import './style/App.css';
-import { Footer, Header, Navigator } from './components/Export.js'
+import { Footer, Navigator } from './components/Export.js'
 
 function App() {
   return (
