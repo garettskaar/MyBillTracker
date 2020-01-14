@@ -29,10 +29,9 @@ class Navigator extends React.Component {
         const login = this.state.validLogin;
         const location = this.state.currentLocation;
         return(
-            <div className="container">
+            <div>
                 <NavBar isLoggedIn={login} handleNavButtonClick={this.handleNavButtonClick} />
-                <div className="container-right">
-                    <Header />
+                <div>
                     <Navigate login={login} location={location} />
                 </div>
             </div>

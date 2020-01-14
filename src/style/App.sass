@@ -1,120 +1,48 @@
 @import "base"
 
-@include respond-below(md)
-    .container
-        display: flex
-        flex-direction: row
-        .container-left-hidden
-            width: 0
-            .nav_toggle
-                margin: 10px
-                visibility: visible
-            .svg_seal
-                visibility: hidden
-            .nav_ul
-                visibility: hidden
-        .container-left
-            align-items: center
-            justify-content: center
-            width: 15%
-            border: 1px solid #555
-            .nav_toggle
-                visibility: visible
-            .svg_seal
-                padding: $sealpadding
-                margin: $sealpadding
-                path
-                    fill: #303030
-                    transition: fill 1.0s ease-out
-                &:hover
-                    cursor: pointer
-                    path
-                        fill: #ffffff
-            .nav_ul
-                list-style-type: none
-                margin: 0
-                .nav_item
-                    font-size: 15px
-                    background: none!important
-                    border: none
-                    text-align: center
-                    margin: 15px auto
-                    text-decoration: none
-                    cursor: pointer
-                
-        .container-right
-            display: flex
-            flex-direction: column
-            width: 85%
-            padding-top: 35px
-            //border: 1px solid #555
-            .app-header
-                order: -1
-                text-align: left
-                padding-bottom: 35px
-                //border: 1px solid #555
-            .app-main
-                    
+@include respond-below(xs)
+    .nav_toggle
+        float: right   
+    .seal_svg
+        float: center
+    .app-header
+        display: none
     .app-footer
-        width: 100%
-        font-size: 13px
-        //border: 1px solid #555
-        p
-            text-align: center
+        font-size: $footerFontSize
+        text-align: center
 
-@include respond-above(md)
-    .container
-        display: flex
-        flex-direction: row
-        .container-left, .container-left-hidden
-            align-items: center
-            justify-content: center
-            width: 15%
-            //border: 1px solid #555
-            .nav_toggle
-                visibility: hidden
-            .svg_seal
-                padding: $sealpadding
-                margin: $sealpadding
-                path
-                    fill: #303030
-                    transition: fill 1.0s ease-out
-                &:hover
-                    cursor: pointer
-                    path
-                        fill: #ffffff
-            .nav_ul
-                list-style-type: none
-                margin: 0
-                .nav_item
-                    font-size: 15px
-                    background: none!important
-                    border: none
-                    text-align: center
-                    margin: 15px auto
-                    text-decoration: none
-                    cursor: pointer
-                
-        .container-right
-            display: flex
-            flex-direction: column
-            width: 85%
-            padding-top: 35px
-            //border: 1px solid #555
-            .app-header
-                order: -1
-                text-align: left
-                padding-bottom: 35px
-                //border: 1px solid #555
-            .app-main
-                    
+@include respond-between(xs, sm)
+    .nav_toggle
+        float: right
+        
+    .seal_svg
+        float: center
+    .app-header
+        display: none
     .app-footer
-        width: 100%
-        font-size: 13px
-        //border: 1px solid #555
-        p
-            text-align: right
-            padding-right: 30px
+        font-size: $footerFontSize + 2
+        text-align: center
+
+@include respond-between(sm, md)
+    .nav_toggle
+        display: none
+    .app-footer
+        font-size: $footerFontSize + 4
+        text-align: right
+
+@include respond-between(md, lg)
+    .nav_toggle
+        display: none
+    .app-footer
+        font-size: $footerFontSize + 6
+        text-align: right
+
+@include respond-above(lg)
+    .nav_toggle
+        display: none
+    .app-footer
+        font-size: $footerFontSize + 6
+        text-align: right
     
        
 

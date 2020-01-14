@@ -1,7 +1,6 @@
 import React from 'react';
 import '../style/App.css';
 import { HamburgerButton } from 'react-hamburger-button';
-import { ReactComponent as Seal } from '../graphics/idaho_seal.svg';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -23,17 +22,13 @@ class NavBar extends React.Component {
     render(){
         const loggedIn = this.props.loggedIn;
         const visible = this.state.visible;
-        let leftClassName = "container-left"
-        if(!visible){
-            leftClassName = "container-left-hidden"
-        }
+        
         if(loggedIn){
             return(
-                <div className={leftClassName}>
+                <div>
                     <div className="nav_toggle">
                         <HamburgerButton open={visible} onClick={this.handleToggle} />
                     </div>
-                    <Seal />
                     <nav>
                         <ul className="nav_ul">
                             <li><button className="nav_item" value="Tracking Lists" onClick={this.handleClick}>{new Date().getFullYear()} Session</button></li>
@@ -46,11 +41,10 @@ class NavBar extends React.Component {
             );
         } else{
             return(
-                <div className={leftClassName}>
+                <div>
                     <div className="nav_toggle">
                         <HamburgerButton open={visible} onClick={this.handleToggle} />
                     </div>
-                    <Seal />
                     <nav>
                         <ul className="nav_ul">
                             <li><button className="nav_item" value="Login" onClick={this.handleClick}>Login</button></li>

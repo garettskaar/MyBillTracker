@@ -16,172 +16,65 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-@media (max-width: 991px) {
-  .container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+@media (max-width: 575px) {
+  .nav_toggle {
+    float: right;
   }
-  .container .container-left-hidden {
-    width: 0;
+  .seal_svg {
+    float: center;
   }
-  .container .container-left-hidden .nav_toggle {
-    margin: 10px;
-    visibility: visible;
-  }
-  .container .container-left-hidden .svg_seal {
-    visibility: hidden;
-  }
-  .container .container-left-hidden .nav_ul {
-    visibility: hidden;
-  }
-  .container .container-left {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    width: 15%;
-    border: 1px solid #555;
-  }
-  .container .container-left .nav_toggle {
-    visibility: visible;
-  }
-  .container .container-left .svg_seal {
-    padding: 10px;
-    margin: 10px;
-  }
-  .container .container-left .svg_seal path {
-    fill: #303030;
-    -webkit-transition: fill 1.0s ease-out;
-    transition: fill 1.0s ease-out;
-  }
-  .container .container-left .svg_seal:hover {
-    cursor: pointer;
-  }
-  .container .container-left .svg_seal:hover path {
-    fill: #ffffff;
-  }
-  .container .container-left .nav_ul {
-    list-style-type: none;
-    margin: 0;
-  }
-  .container .container-left .nav_ul .nav_item {
-    font-size: 15px;
-    background: none !important;
-    border: none;
-    text-align: center;
-    margin: 15px auto;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  .container .container-right {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 85%;
-    padding-top: 35px;
-  }
-  .container .container-right .app-header {
-    -webkit-box-ordinal-group: 0;
-        -ms-flex-order: -1;
-            order: -1;
-    text-align: left;
-    padding-bottom: 35px;
+  .app-header {
+    display: none;
   }
   .app-footer {
-    width: 100%;
-    font-size: 13px;
-  }
-  .app-footer p {
+    font-size: 10px;
     text-align: center;
   }
 }
 
-@media (min-width: 992px) {
-  .container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+@media (min-width: 576px) and (max-width: 767px) {
+  .nav_toggle {
+    float: right;
   }
-  .container .container-left, .container .container-left-hidden {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    width: 15%;
+  .seal_svg {
+    float: center;
   }
-  .container .container-left .nav_toggle, .container .container-left-hidden .nav_toggle {
-    visibility: hidden;
-  }
-  .container .container-left .svg_seal, .container .container-left-hidden .svg_seal {
-    padding: 10px;
-    margin: 10px;
-  }
-  .container .container-left .svg_seal path, .container .container-left-hidden .svg_seal path {
-    fill: #303030;
-    -webkit-transition: fill 1.0s ease-out;
-    transition: fill 1.0s ease-out;
-  }
-  .container .container-left .svg_seal:hover, .container .container-left-hidden .svg_seal:hover {
-    cursor: pointer;
-  }
-  .container .container-left .svg_seal:hover path, .container .container-left-hidden .svg_seal:hover path {
-    fill: #ffffff;
-  }
-  .container .container-left .nav_ul, .container .container-left-hidden .nav_ul {
-    list-style-type: none;
-    margin: 0;
-  }
-  .container .container-left .nav_ul .nav_item, .container .container-left-hidden .nav_ul .nav_item {
-    font-size: 15px;
-    background: none !important;
-    border: none;
-    text-align: center;
-    margin: 15px auto;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  .container .container-right {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 85%;
-    padding-top: 35px;
-  }
-  .container .container-right .app-header {
-    -webkit-box-ordinal-group: 0;
-        -ms-flex-order: -1;
-            order: -1;
-    text-align: left;
-    padding-bottom: 35px;
+  .app-header {
+    display: none;
   }
   .app-footer {
-    width: 100%;
-    font-size: 13px;
+    font-size: 12px;
+    text-align: center;
   }
-  .app-footer p {
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .nav_toggle {
+    display: none;
+  }
+  .app-footer {
+    font-size: 14px;
     text-align: right;
-    padding-right: 30px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .nav_toggle {
+    display: none;
+  }
+  .app-footer {
+    font-size: 16px;
+    text-align: right;
+  }
+}
+
+@media (min-width: 1200px) {
+  .nav_toggle {
+    display: none;
+  }
+  .app-footer {
+    font-size: 16px;
+    text-align: right;
   }
 }
 /*# sourceMappingURL=App.css.map */
