@@ -1,6 +1,6 @@
 import React from 'react';
 import '../style/App.css';
-import { NavBar, Header, Login, TrackingLists } from './Export.js'
+import { NavBar, Login, TrackingLists } from './Export.js'
 
 
 class Navigator extends React.Component {
@@ -29,10 +29,14 @@ class Navigator extends React.Component {
         const login = this.state.validLogin;
         const location = this.state.currentLocation;
         return(
-            <div>
-                <NavBar isLoggedIn={login} handleNavButtonClick={this.handleNavButtonClick} />
-                <div>
-                    <Navigate login={login} location={location} />
+            <div className="box app">
+                <div className="container-app">
+                    <div className="box-app nav">
+                        <NavBar isLoggedIn={login} handleNavButtonClick={this.handleNavButtonClick} />
+                    </div>
+                    <div className="box-app main">
+                        <Navigate login={login} location={location} />
+                    </div>
                 </div>
             </div>
         );

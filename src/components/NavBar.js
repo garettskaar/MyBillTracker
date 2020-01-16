@@ -11,10 +11,12 @@ class NavBar extends React.Component {
         this.handleClick = this.handleClick.bind(this);
         this.handleToggle = this.handleToggle.bind(this);
     }
-    handleToggle(){
-        this.setState({
-            visible: !this.state.visible
-        });
+    handleToggle(event){
+        this.setState(state => ({
+            visible: !state.visible
+        }));
+        // var nav = document.querySelector('nav');
+        // nav.classList.toggle('visible');
     }
     handleClick(event){
         this.props.handleNavButtonClick(event);
@@ -26,7 +28,7 @@ class NavBar extends React.Component {
         if(loggedIn){
             return(
                 <div>
-                    <div className="nav_toggle">
+                    <div className="nav-toggle">
                         <HamburgerButton open={visible} onClick={this.handleToggle} />
                     </div>
                     <nav>
@@ -42,7 +44,7 @@ class NavBar extends React.Component {
         } else{
             return(
                 <div>
-                    <div className="nav_toggle">
+                    <div className="nav-toggle">
                         <HamburgerButton open={visible} onClick={this.handleToggle} />
                     </div>
                     <nav>

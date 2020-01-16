@@ -1,10 +1,13 @@
 html {
   height: 100%;
+  width: 100%;
 }
 
 body {
   height: 100%;
+  width: 100%;
   margin: 0;
+  padding: 0;
   background-image: linear-gradient(260deg, #302b2b 0%, #d1d1d1 100%);
   background-repeat: no-repeat;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -16,65 +19,137 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+}
+
+.container-header, .container-app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.box, .box-header, .box-app {
+  width: 100%;
+}
+
+.svg_seal {
+  width: 100pt;
+  height: 100pt;
+}
+
+.svg_seal path {
+  fill: #303030;
+  -webkit-transition: fill 1.0s ease-out;
+  transition: fill 1.0s ease-out;
+}
+
+.svg_seal:hover {
+  cursor: pointer;
+}
+
+.svg_seal:hover path {
+  fill: #ffffff;
+}
+
+.header {
+  border-bottom: 2px solid #302b2b;
+}
+
+.app {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+.footer {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  border-top: 2px solid #302b2b;
+}
+
 @media (max-width: 575px) {
-  .nav_toggle {
-    float: right;
+  .seal {
+    margin: 10px;
   }
-  .seal_svg {
-    float: center;
+  .svg_seal {
+    width: 80pt;
+    height: 80pt;
+    display: block;
+    margin: auto;
   }
-  .app-header {
-    display: none;
+  .title {
+    font-size: 10px;
+    text-align: center;
   }
-  .app-footer {
+  .nav {
+    height: 100%;
+    width: 300px;
+    position: absolute;
+    -webkit-transform: translate(-300px, 0);
+            transform: translate(-300px, 0);
+    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: -webkit-transform 0.3s ease;
+    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  }
+  .nav .visible {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  .footer {
     font-size: 10px;
     text-align: center;
   }
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
-  .nav_toggle {
-    float: right;
-  }
-  .seal_svg {
-    float: center;
-  }
-  .app-header {
-    display: none;
-  }
-  .app-footer {
-    font-size: 12px;
+  .footer {
+    font-size: 10px;
     text-align: center;
   }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  .nav_toggle {
-    display: none;
+  .seal {
+    width: 20%;
   }
-  .app-footer {
-    font-size: 14px;
+  .svg_seal {
+    width: 80pt;
+    height: 80pt;
+    margin: auto;
+  }
+  .title {
+    font-size: 20px;
+    width: 80%;
+    text-align: left;
+  }
+  .footer {
+    font-size: 10px;
     text-align: right;
   }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
-  .nav_toggle {
-    display: none;
-  }
-  .app-footer {
-    font-size: 16px;
-    text-align: right;
+  .footer {
+    font-size: 10px;
+    text-align: center;
   }
 }
 
 @media (min-width: 1200px) {
-  .nav_toggle {
-    display: none;
-  }
-  .app-footer {
-    font-size: 16px;
-    text-align: right;
+  .footer {
+    font-size: 10px;
+    text-align: center;
   }
 }
 /*# sourceMappingURL=App.css.map */
