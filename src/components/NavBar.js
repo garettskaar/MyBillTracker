@@ -5,25 +5,18 @@ import { HamburgerButton } from 'react-hamburger-button';
 class NavBar extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            visible: true
-        };   
+        this.handleToggle = this.handleToggle.bind(this);   
         this.handleClick = this.handleClick.bind(this);
-        this.handleToggle = this.handleToggle.bind(this);
     }
-    handleToggle(event){
-        this.setState(state => ({
-            visible: !state.visible
-        }));
-        // var nav = document.querySelector('nav');
-        // nav.classList.toggle('visible');
+    handleToggle(){
+        this.props.handleToggle();
     }
     handleClick(event){
         this.props.handleNavButtonClick(event);
     }
     render(){
         const loggedIn = this.props.loggedIn;
-        const visible = this.state.visible;
+        const visible = this.props.visible;
         
         if(loggedIn){
             return(
