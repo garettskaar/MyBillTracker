@@ -1,8 +1,9 @@
 @import "base"
 
-
+//
+//  All Responsive Behavior is defined below
+//–––––––––––––––––––––––––––––––––––––––––––––––––
 @include respond-below(xs)
-    .nav-toggle
         
     .header
     
@@ -16,84 +17,130 @@
     .title
         font-size: 10px
         text-align: center
-    .container-app
 
-    .nav-off-canvas
-        
-    .nav-visible
-        
-    .main
-        
+    .nav-canvas-hidden
+        margin-left: -90%
+        transition: margin 0.3s ease
+    .nav-canvas-visible
+        margin-left: 0
+        transition: margin 0.3s ease
     .main-visible
-          
+        
+    .main-hidden
+        display: none
 
     .footer
         font-size: $footerFontSize
         text-align: center
 
 @include respond-between(xs, sm)
-    .nav_toggle
-
+        
     .header
+    
+    .seal
+        
+    .svg_seal
+        width: $sealSize - 20
+        height: $sealSize - 20
+        display: block
+        margin: auto
+    .title
+        font-size: 10px
+        text-align: center
 
-    .container-app
-        display: flex
-        flex-wrap: wrap
-
-    .nav
-
-    .main
-            
+    .nav-canvas-hidden
+        margin-left: -90%
+        transition: margin 0.3s ease
+    .nav-canvas-visible
+        margin-left: 0
+        transition: margin 0.3s ease
+    .main-visible
+        
+    .main-hidden
+        display: none
     .footer
         font-size: $footerFontSize
         text-align: center
 
 @include respond-between(sm, md)
-    .nav_toggle
-        
-    .seal
-        width: 20%
     .svg_seal
         width: $sealSize - 20
         height: $sealSize - 20
         margin: auto
+    .seal
+        width: 20%
     .title
         font-size: 20px
         width: 80%
         text-align: left
-    .nav
 
-    .main
+    .nav-canvas-hidden
+        width: 25%
+        margin-left: -22% 
+        transition: margin 0.3s ease
+    .nav-canvas-visible
+        width: 25%
+        margin-left: 0
+        transition: margin 0.3s ease
+    .main-visible
+        
+    .main-hidden
             
     .footer
         font-size: $footerFontSize
         text-align: right
 
 @include respond-between(md, lg)
-    .nav_toggle
-
-    .header
-
-    .nav
-
-    .main
+    .svg_seal
+        width: $sealSize
+        height: $sealSize
+        margin: auto
+    .seal
+        width: 20%
+    .title
+        font-size: 20px
+        width: 80%
+        text-align: left
+    
+    .nav-canvas-hidden,.nav-canvas-visible
+        width: 150px
+        height: 100%
+        margin-left: 0
+        border-right: 2px solid #302b2b
+    .nav-toggle
+        display: none
+    .main-visible
+        
+    .main-hidden
             
     .footer
         font-size: $footerFontSize
-        text-align: center
+        text-align: right
 
 @include respond-above(lg)
-    .nav_toggle
-
-    .header
-
-    .nav
-
-    .main
+    .svg_seal
+        width: $sealSize
+        height: $sealSize
+        margin: auto
+    .seal
+        width: 20%
+    .title
+        font-size: 20px
+        width: 80%
+        text-align: left
+    .nav-canvas-hidden,.nav-canvas-visible
+        width: 200px
+        margin-left: 0
+        border-right: 2px solid #302b2b
+    .nav-toggle
+        display: none
+    .main-visible
+        
+    .main-hidden
             
     .footer
         font-size: $footerFontSize
-        text-align: center
+        text-align: right
     
        
 

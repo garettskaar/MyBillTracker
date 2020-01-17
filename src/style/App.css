@@ -8,7 +8,6 @@ html, body {
 }
 
 body {
-  height: 100vh;
   background-image: linear-gradient(260deg, #302b2b 0%, #d1d1d1 100%);
   background-repeat: no-repeat;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -40,7 +39,14 @@ code {
 }
 
 .container-app {
-  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
 }
 
 .box, .box-header, .box-app {
@@ -48,8 +54,8 @@ code {
 }
 
 .nav-toggle {
-  position: absolute;
-  right: 0;
+  border-right: 2px solid #302b2b;
+  width: auto;
 }
 
 .svg_seal {
@@ -79,6 +85,9 @@ code {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .footer {
@@ -98,6 +107,19 @@ code {
     font-size: 10px;
     text-align: center;
   }
+  .nav-canvas-hidden {
+    margin-left: -90%;
+    -webkit-transition: margin 0.3s ease;
+    transition: margin 0.3s ease;
+  }
+  .nav-canvas-visible {
+    margin-left: 0;
+    -webkit-transition: margin 0.3s ease;
+    transition: margin 0.3s ease;
+  }
+  .main-hidden {
+    display: none;
+  }
   .footer {
     font-size: 10px;
     text-align: center;
@@ -105,12 +127,28 @@ code {
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
-  .container-app {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+  .svg_seal {
+    width: 80pt;
+    height: 80pt;
+    display: block;
+    margin: auto;
+  }
+  .title {
+    font-size: 10px;
+    text-align: center;
+  }
+  .nav-canvas-hidden {
+    margin-left: -90%;
+    -webkit-transition: margin 0.3s ease;
+    transition: margin 0.3s ease;
+  }
+  .nav-canvas-visible {
+    margin-left: 0;
+    -webkit-transition: margin 0.3s ease;
+    transition: margin 0.3s ease;
+  }
+  .main-hidden {
+    display: none;
   }
   .footer {
     font-size: 10px;
@@ -119,18 +157,30 @@ code {
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  .seal {
-    width: 20%;
-  }
   .svg_seal {
     width: 80pt;
     height: 80pt;
     margin: auto;
   }
+  .seal {
+    width: 20%;
+  }
   .title {
     font-size: 20px;
     width: 80%;
     text-align: left;
+  }
+  .nav-canvas-hidden {
+    width: 25%;
+    margin-left: -22%;
+    -webkit-transition: margin 0.3s ease;
+    transition: margin 0.3s ease;
+  }
+  .nav-canvas-visible {
+    width: 25%;
+    margin-left: 0;
+    -webkit-transition: margin 0.3s ease;
+    transition: margin 0.3s ease;
   }
   .footer {
     font-size: 10px;
@@ -139,16 +189,59 @@ code {
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
+  .svg_seal {
+    width: 100pt;
+    height: 100pt;
+    margin: auto;
+  }
+  .seal {
+    width: 20%;
+  }
+  .title {
+    font-size: 20px;
+    width: 80%;
+    text-align: left;
+  }
+  .nav-canvas-hidden, .nav-canvas-visible {
+    width: 150px;
+    height: 100%;
+    margin-left: 0;
+    border-right: 2px solid #302b2b;
+  }
+  .nav-toggle {
+    display: none;
+  }
   .footer {
     font-size: 10px;
-    text-align: center;
+    text-align: right;
   }
 }
 
 @media (min-width: 1200px) {
+  .svg_seal {
+    width: 100pt;
+    height: 100pt;
+    margin: auto;
+  }
+  .seal {
+    width: 20%;
+  }
+  .title {
+    font-size: 20px;
+    width: 80%;
+    text-align: left;
+  }
+  .nav-canvas-hidden, .nav-canvas-visible {
+    width: 200px;
+    margin-left: 0;
+    border-right: 2px solid #302b2b;
+  }
+  .nav-toggle {
+    display: none;
+  }
   .footer {
     font-size: 10px;
-    text-align: center;
+    text-align: right;
   }
 }
 /*# sourceMappingURL=App.css.map */

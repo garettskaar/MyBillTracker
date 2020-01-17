@@ -1,31 +1,22 @@
 import React from 'react';
 import '../style/App.css';
-import { HamburgerButton } from 'react-hamburger-button';
 
 class NavBar extends React.Component {
     constructor(props) {
         super(props);
-        this.handleToggle = this.handleToggle.bind(this);   
         this.handleClick = this.handleClick.bind(this);
-    }
-    handleToggle(){
-        this.props.handleToggle();
     }
     handleClick(event){
         this.props.handleNavButtonClick(event);
     }
     render(){
         const loggedIn = this.props.loggedIn;
-        const visible = this.props.visible;
-        
+
         if(loggedIn){
             return(
                 <div>
-                    <div className="nav-toggle">
-                        <HamburgerButton open={visible} onClick={this.handleToggle} />
-                    </div>
-                    <nav>
-                        <ul className="nav_ul">
+                    <nav className="nav_ul">
+                        <ul>
                             <li><button className="nav_item" value="Tracking Lists" onClick={this.handleClick}>{new Date().getFullYear()} Session</button></li>
                             <li><button className="nav_item" value="User Manual" onClick={this.handleClick}>User Manual</button></li>
                             <li><button className="nav_item" value="Change Password" onClick={this.handleClick}>Change Password</button></li>
@@ -37,9 +28,6 @@ class NavBar extends React.Component {
         } else{
             return(
                 <div>
-                    <div className="nav-toggle">
-                        <HamburgerButton open={visible} onClick={this.handleToggle} />
-                    </div>
                     <nav>
                         <ul className="nav_ul">
                             <li><button className="nav_item" value="Login" onClick={this.handleClick}>Login</button></li>
